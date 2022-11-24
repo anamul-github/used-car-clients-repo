@@ -22,7 +22,6 @@ const SignUp = () => {
                 form.reset();
             })
             .catch(error => {
-                console.error(error);
                 setError(error.message);
             });
     }

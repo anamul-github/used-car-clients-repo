@@ -6,10 +6,10 @@ const Home = () => {
             <img className='' src="https://i.ibb.co/9cR8Ryv/2.jpg" alt="car-banner" />
 
             <div>
-                <h2 className='text-5xl'>Advertised Items</h2>
+                <h2 className='text-4xl font-bold text-center mb-2'>Advertised Items</h2>
             </div>
             <div>
-                <h2 className='text-5xl'>Used Cars</h2>
+                <h2 className='text-4xl font-bold text-center mb-2'>Used Cars</h2>
             </div>
 
             <div className='bg-cupcake p-5'>
