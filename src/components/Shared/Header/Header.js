@@ -14,7 +14,7 @@ const Header = () => {
 
     return (
         <div>
-            <nav className="bg-gray-800">
+            <nav className="bg-gray-800 py-4">
                 <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                     <div className="relative flex h-16 items-center justify-between">
                         <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -41,7 +41,7 @@ const Header = () => {
 
                                     <Link to='/' className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</Link>
 
-                                    <Link to='/blog' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blogs</Link>
+                                    <Link to='/blog' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</Link>
 
                                     {
                                         user?.uid ?
