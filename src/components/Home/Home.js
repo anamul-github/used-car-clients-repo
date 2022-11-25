@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
+    const [categoryNames, setCategoryNames] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/categoryNames')
+            .then(res => res.json())
+            .then(data => setCategoryNames(data));
+    }, [])
     return (
         <div>
             <img className='' src="https://i.ibb.co/9cR8Ryv/2.jpg" alt="car-banner" />
 
             <div>
                 <h2 className='text-4xl font-bold text-center mb-2'>Advertised Items</h2>
+
             </div>
+
             <div>
                 <h2 className='text-4xl font-bold text-center mb-2'>Used Cars</h2>
+                {
+                    categoryNames.map(category =>
+                        <div key={category._id}>
+                            <Link className='cards grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8'>
+                                <div className="card w-96 bg-base-100 shadow-2xl border">
+                                    <div className="card-body">
+                                        <h2 className="card-title">{category.name}</h2>
+                                    </div>
+                                </div>
+                            </Link>
+                        </div>)
+                }
             </div>
 
             <div className='bg-cupcake p-5'>
