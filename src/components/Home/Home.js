@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-    const [categoryNames, setCategoryNames] = useState([]);
+    const [categories, setCategories] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/categoryNames')
+        fetch('http://localhost:5000/categories')
             .then(res => res.json())
-            .then(data => setCategoryNames(data));
+            .then(data => setCategories(data));
     }, [])
     return (
         <div>
@@ -20,16 +20,20 @@ const Home = () => {
             <div>
                 <h2 className='text-4xl font-bold text-center mb-2'>Used Cars</h2>
                 {
-                    categoryNames.map(category =>
+                    categories.map(category =>
                         <div key={category._id}>
-                            <Link className='cards grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8'>
-                                <div className="card w-96 bg-base-100 shadow-2xl border">
-                                    <div className="card-body">
+                            <Link to={`/category/${category.category_id}`} className="card w-96 bg-base-100 shadow-2xl border cards mx-auto">
+                                <div className="card-body flex justify-center align-center">
+                                    <div>
+                                        <h2 className="card-title">{category.category_id}.</h2>
+                                    </div>
+                                    <div>
                                         <h2 className="card-title">{category.name}</h2>
                                     </div>
                                 </div>
                             </Link>
-                        </div>)
+                        </div>
+                    )
                 }
             </div>
 
