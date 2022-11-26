@@ -2,11 +2,12 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Blog from '../components/Blog/Blog';
 import Category from '../components/Category/Category';
-
 import Home from '../components/Home/Home';
 import Login from '../components/Login/Login';
 import SignUp from '../components/SignUp/SignUp';
 import Main from '../layout/Main';
+import PrivateRoute from './PrivateRoute';
+
 
 export const routes = createBrowserRouter([
     {
@@ -22,7 +23,7 @@ export const routes = createBrowserRouter([
                 loader: async ({ params }) => {
                     return fetch(`http://localhost:5000/category/${params.id}`)
                 },
-                element: <Category></Category>
+                element: <PrivateRoute><Category></Category></PrivateRoute>
             },
             {
                 path: '/blog',
