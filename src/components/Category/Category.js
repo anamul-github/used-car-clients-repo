@@ -8,7 +8,6 @@ const Category = () => {
 
     const [selectedCar, setSelectedCar] = useState(null);
 
-
     return (
         <div>
             {
@@ -37,7 +36,8 @@ const Category = () => {
             {
                 selectedCar &&
                 <BookingModal
-                    selectedCar={selectedCar}>
+                    selectedCar={selectedCar}
+                    setSelectedCar={setSelectedCar}>
                 </BookingModal>}
         </div>
 
