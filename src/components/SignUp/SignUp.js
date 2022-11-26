@@ -1,10 +1,13 @@
+
 import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const SignUp = () => {
     const [error, setError] = useState('');
+    const { createUser, updateUser } = useContext(AuthContext);
 
-    const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSignUp = (event) => {
         event.preventDefault();
@@ -20,6 +23,15 @@ const SignUp = () => {
                 console.log(user);
                 setError('');
                 form.reset();
+
+                const userInfo = {
+                    displayName: result.name
+                }
+
+                updateUser(userInfo)
+                    .then(() => {
+                        navigate('/');
+                    })
             })
             .catch(error => {
                 setError(error.message);

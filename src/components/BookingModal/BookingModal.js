@@ -7,7 +7,6 @@ const BookingModal = ({ selectedCar, setSelectedCar }) => {
     //selectedCar is just another name of detail(props drilling)
     const { name, resale_price } = selectedCar;
     const { user } = useContext(AuthContext);
-    console.log(user);
 
     const handleBooking = event => {
         event.preventDefault();
@@ -22,13 +21,7 @@ const BookingModal = ({ selectedCar, setSelectedCar }) => {
         console.log(name, email, carType, price, phone, location);
 
         setSelectedCar(null);
-
-
     }
-
-
-
-
 
     return (
         <>
@@ -46,18 +39,8 @@ const BookingModal = ({ selectedCar, setSelectedCar }) => {
                         <input name='location' type="text" placeholder="Meeting Location" className="input input-bordered w-full" />
 
                         <button className="btn w-full">Submit</button>
+
                     </form>
-                </div>
-            </div>
-
-            <input type="checkbox" id="success-modal" className="modal-toggle" />
-            <div className="modal">
-                <div className="modal-box">
-                    <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
-
-                    <div className="modal-action">
-                        <label htmlFor="success-modal" className="btn">Yay!</label>
-                    </div>
                 </div>
             </div>
         </>
