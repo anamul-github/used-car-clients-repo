@@ -21,16 +21,20 @@ const Home = () => {
                 <h2 className='text-4xl font-bold text-center mb-2'>Used Cars</h2>
                 {
                     categories.map(category =>
-                        <div key={category._id}>
-                            <Link to={`/category/${category.category_id}`} className="card w-96 bg-base-100 shadow-2xl border cards mx-auto">
-                                <div className="card-body flex justify-center align-center">
-                                    <div>
-                                        <h2 className="card-title">{category.category_id}.</h2>
-                                    </div>
-                                    <div>
-                                        <h2 className="card-title">{category.name}</h2>
-                                    </div>
+                        <div key={category._id} className="card w-96 bg-base-100 shadow-2xl border cards mx-auto">
+                            <div className="card-body flex flex-row gap-x-5">
+                                <div>
+                                    <h2 className="card-title">{category.category_id}.</h2>
                                 </div>
+
+                                <div>
+                                    <h2 className="card-title">{category.name}</h2>
+                                </div>
+                            </div>
+                            <Link className='px-10 pb-5' to={`/category/${category.category_id}`}>
+                                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+                                    View Details
+                                </button>
                             </Link>
                         </div>
                     )
