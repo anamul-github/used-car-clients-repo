@@ -99,9 +99,29 @@ const Header = () => {
 
                         <Link to='/blog' className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</Link>
 
-                        <Link to='/login' className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</Link>
+                        <Link to='/dashboard' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</Link>
 
-                        <Link to='/signup' className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sign Up</Link>
+                        {
+                            user?.uid ?
+                                <>
+                                    <button variant="light" onClick={handleLogOut} className=' text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>Logout</button>
+                                </>
+                                :
+                                <>
+                                    <Link to='/login' className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</Link>
+                                    <Link to='/signup' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign Up</Link>
+
+
+                                    <Link className="dropdown dropdown-bottom">
+                                        <Link tabIndex={0} className="btn text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Options</Link>
+                                        <ul tabIndex={0} className="dropdown-content menu">
+                                            <Link>Buyer</Link>
+                                            <Link>Seller</Link>
+                                        </ul>
+                                    </Link>
+
+                                </>
+                        }
                     </div>
                 </div>
             </nav>

@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
-const Dashboard = () => {
+const MyOrders = () => {
     const { user } = useContext(AuthContext);
 
     const url = `http://localhost:5000/bookings?email=${user?.email}`;
@@ -42,4 +42,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default MyOrders;
