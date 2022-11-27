@@ -1,4 +1,3 @@
-
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
@@ -30,13 +29,30 @@ const SignUp = () => {
 
                 updateUser(userInfo)
                     .then(() => {
-                        navigate('/');
+                        saveUser(name, email);
                     })
             })
             .catch(error => {
                 setError(error.message);
             });
     }
+
+    const saveUser = (name, email) => {
+        const user = { name, email };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('save user', data);
+                navigate('/');
+            })
+    }
+
     return (
         <div className="w-full max-w-xs mx-auto pt-10 pb-6">
             <h2 className='text-white py-2 px-2 text-lg'>Please Sign Up</h2>
