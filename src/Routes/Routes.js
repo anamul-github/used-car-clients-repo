@@ -6,6 +6,7 @@ import Dashboard from '../components/Dashboard/Dashboard';
 import Home from '../components/Home/Home';
 import Login from '../components/Login/Login';
 import SignUp from '../components/SignUp/SignUp';
+import DashboardLayout from '../layout/DashboardLayout';
 import Main from '../layout/Main';
 import PrivateRoute from './PrivateRoute';
 
@@ -31,10 +32,6 @@ export const routes = createBrowserRouter([
                 element: <Blog></Blog>
             },
             {
-                path: '/dashboard',
-                element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
-            },
-            {
                 path: '/login',
                 element: <Login></Login>
             },
@@ -50,5 +47,15 @@ export const routes = createBrowserRouter([
             <h2 className='text-center bg-red-900 py-14 text-7xl font-bold'>This route is not found!!</h2>
             <img className='w-full' src="https://i.ibb.co/2Mt4nsw/the404.png" alt="" />
         </div>
+    },
+    {
+        path: '/dashboard',
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        children: [
+            {
+                path: '/dashboard',
+                element: <Dashboard></Dashboard>
+            }
+        ]
     }
 ])
