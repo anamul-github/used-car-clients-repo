@@ -1,9 +1,6 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-
-
 
 const BookingModal = ({ selectedCar, setSelectedCar }) => {
     //selectedCar is just another name of detail(props drilling)
@@ -44,12 +41,9 @@ const BookingModal = ({ selectedCar, setSelectedCar }) => {
 
                 if (data.acknowledged) {
                     setSelectedCar(null);
-                    toast.success('Booking Confirmed')
+                    toast.success("Booking Confirmed")
                 }
-
             })
-
-
     }
 
     return (

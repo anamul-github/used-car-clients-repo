@@ -39,9 +39,11 @@ const Header = () => {
                             <div className="hidden sm:ml-6 sm:block">
                                 <div className="flex space-x-4">
 
-                                    <Link to='/' className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</Link>
+                                    <Link to='/' className="text-gray-300 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</Link>
 
                                     <Link to='/blog' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</Link>
+
+                                    <Link to='/dashboard' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</Link>
 
                                     {
                                         user?.uid ?
@@ -53,13 +55,15 @@ const Header = () => {
                                                 <Link to='/login' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</Link>
                                                 <Link to='/signup' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign Up</Link>
 
-                                                <div className="dropdown">
-                                                    <Link tabIndex={0} className="btn m-1 text-gray-300">Options</Link>
-                                                    <Link tabIndex={0} className="dropdown-content menu text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                                                        <Link to='/buyer' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"><li>Buyer</li></Link>
-                                                        <Link to='/seller' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"><li>Seller</li></Link>
-                                                    </Link>
-                                                </div>
+
+                                                <Link className="dropdown dropdown-bottom">
+                                                    <Link tabIndex={0} className="btn m-1">Options</Link>
+                                                    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                                                        <Link>Buyer</Link>
+                                                        <Link>Seller</Link>
+                                                    </ul>
+                                                </Link>
+
                                             </>
                                     }
                                 </div>

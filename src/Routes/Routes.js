@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Blog from '../components/Blog/Blog';
 import Category from '../components/Category/Category';
+import Dashboard from '../components/Dashboard/Dashboard';
 import Home from '../components/Home/Home';
 import Login from '../components/Login/Login';
 import SignUp from '../components/SignUp/SignUp';
@@ -28,6 +29,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/dashboard',
+                element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
             },
             {
                 path: '/login',
