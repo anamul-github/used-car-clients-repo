@@ -2,8 +2,10 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Blog from '../components/Blog/Blog';
 import Category from '../components/Category/Category';
+import AddProduct from '../components/Dashboard/AddProduct/AddProduct';
+import AllBuyers from '../components/Dashboard/AllBuyers/AllBuyers';
+
 import AllSellers from '../components/Dashboard/AllSellers/AllSellers';
-import AllUsers from '../components/Dashboard/AllUsers/AllUsers';
 import MyOrders from '../components/Dashboard/MyOrders/MyOrders';
 import Home from '../components/Home/Home';
 import Login from '../components/Login/Login';
@@ -12,6 +14,7 @@ import DashboardLayout from '../layout/DashboardLayout';
 import Main from '../layout/Main';
 import AdminRoute from './AdminRoute';
 import PrivateRoute from './PrivateRoute';
+import SellerRoute from './SellerRoute';
 
 
 export const routes = createBrowserRouter([
@@ -41,7 +44,8 @@ export const routes = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
-            }
+            },
+
         ]
     },
     {
@@ -60,13 +64,17 @@ export const routes = createBrowserRouter([
                 element: <MyOrders></MyOrders>
             },
             {
-                path: '/dashboard/allusers',
-                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+                path: '/dashboard/allbuyers',
+                element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
             },
             {
                 path: '/dashboard/allsellers',
                 element: <AdminRoute><AllSellers></AllSellers></AdminRoute>
             },
+            {
+                path: '/dashboard/addproduct',
+                element: <SellerRoute><AddProduct></AddProduct></SellerRoute>
+            }
         ]
     }
 ])

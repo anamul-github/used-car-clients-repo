@@ -4,10 +4,12 @@ import Footer from '../components/Shared/Footer/Footer';
 import Header from '../components/Shared/Header/Header';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 import useAdmin from '../hooks/useAdmin';
+import useSeller from '../hooks/useSeller';
 
 const DashboardLayout = () => {
     const { user } = useContext(AuthContext);
     const [isAdmin] = useAdmin(user?.email);
+    const [isSeller] = useSeller(user?.email);
     return (
         <div>
             <Header></Header>
@@ -25,10 +27,18 @@ const DashboardLayout = () => {
                         <li><Link to='/dashboard'>My Orders</Link></li>
                         {
                             isAdmin && <>
-                                <li><Link to='/dashboard/allusers'>All Buyers</Link></li>
+                                <li><Link to='/dashboard/allbuyers'>All Buyers</Link></li>
                                 <li><Link to='/dashboard/allsellers'>All Sellers</Link></li>
+
                             </>
                         }
+                        {
+                            isSeller && <>
+                                <li><Link to='/dashboard/addproduct'>Add a Product</Link></li>
+                            </>
+                        }
+
+
                     </ul>
 
                 </div>
