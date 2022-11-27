@@ -77,14 +77,22 @@ const Login = () => {
                         Login
                     </button>
                 </div>
+
                 <button className="btn w-full mt-10" onClick={handleGoogleSignIn}>Login With Google</button>
                 <p className="text-center text-gray-500 text-xs">
                     {error}
                 </p>
             </form>
-
         </div>
     );
 };
 
 export default Login;
+
+{/* <Link className="dropdown dropdown-bottom">
+    <Link tabIndex={0} className="btn m-1">Options</Link>
+    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+        <Link>Buyer</Link>
+        <Link>Seller</Link>
+    </ul>
+</Link> */}

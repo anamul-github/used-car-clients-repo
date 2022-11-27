@@ -55,15 +55,6 @@ const Header = () => {
                                                 <Link to='/login' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</Link>
                                                 <Link to='/signup' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign Up</Link>
 
-
-                                                <Link className="dropdown dropdown-bottom">
-                                                    <Link tabIndex={0} className="btn m-1">Options</Link>
-                                                    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                                                        <Link>Buyer</Link>
-                                                        <Link>Seller</Link>
-                                                    </ul>
-                                                </Link>
-
                                             </>
                                     }
                                 </div>
@@ -110,16 +101,6 @@ const Header = () => {
                                 <>
                                     <Link to='/login' className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</Link>
                                     <Link to='/signup' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign Up</Link>
-
-
-                                    <Link className="dropdown dropdown-bottom">
-                                        <Link tabIndex={0} className="btn text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Options</Link>
-                                        <ul tabIndex={0} className="dropdown-content menu">
-                                            <Link>Buyer</Link>
-                                            <Link>Seller</Link>
-                                        </ul>
-                                    </Link>
-
                                 </>
                         }
                     </div>

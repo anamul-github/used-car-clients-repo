@@ -19,9 +19,10 @@ const SignUp = () => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
+        const role = form.role.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, email, password);
+        console.log(name, email, password, role);
 
         createUser(email, password)
             .then(result => {
@@ -36,7 +37,7 @@ const SignUp = () => {
 
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(name, email);
+                        saveUser(name, email, role);
                     })
             })
             .catch(error => {
@@ -44,8 +45,8 @@ const SignUp = () => {
             });
     }
 
-    const saveUser = (name, email) => {
-        const user = { name, email };
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role };
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
@@ -69,6 +70,17 @@ const SignUp = () => {
                     </label>
                     <input className="shadow appearance-none border rounded w-full py-2 px-3 text-white-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name='name' placeholder="" />
                 </div>
+
+                <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        Options
+                    </label>
+                    <select className="select shadow appearance-none border rounded w-full py-2 px-3 text-white-700 leading-tight focus:outline-none focus:shadow-outline" name='role'>
+                        <option value='buyer'>Buyer</option>
+                        <option value='seller'>Seller</option>
+                    </select>
+                </div>
+
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
                         Email
