@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import BookingModal from '../BookingModal/BookingModal';
 
-
 const Category = () => {
     const details = useLoaderData();
-
     const [selectedCar, setSelectedCar] = useState(null);
 
     return (
@@ -40,8 +38,6 @@ const Category = () => {
                     setSelectedCar={setSelectedCar}>
                 </BookingModal>}
         </div>
-
-        //key={detail._id}>{detail.name}
     );
 };
 
