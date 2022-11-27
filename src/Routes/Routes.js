@@ -1,10 +1,11 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import AllUsers from '../components/AllUsers/AllUsers';
 import Blog from '../components/Blog/Blog';
 import Category from '../components/Category/Category';
-import Dashboard from '../components/Dashboard/Dashboard';
 import Home from '../components/Home/Home';
 import Login from '../components/Login/Login';
+import MyOrders from '../components/MyOrders/MyOrders';
 import SignUp from '../components/SignUp/SignUp';
 import DashboardLayout from '../layout/DashboardLayout';
 import Main from '../layout/Main';
@@ -54,8 +55,12 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/dashboard',
-                element: <Dashboard></Dashboard>
-            }
+                element: <MyOrders></MyOrders>
+            },
+            {
+                path: '/dashboard/allusers',
+                element: <AllUsers></AllUsers>
+            },
         ]
     }
 ])
