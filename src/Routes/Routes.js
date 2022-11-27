@@ -9,6 +9,7 @@ import Login from '../components/Login/Login';
 import SignUp from '../components/SignUp/SignUp';
 import DashboardLayout from '../layout/DashboardLayout';
 import Main from '../layout/Main';
+import AdminRoute from './AdminRoute';
 import PrivateRoute from './PrivateRoute';
 
 
@@ -59,7 +60,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/dashboard/allusers',
-                element: <AllUsers></AllUsers>
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
             },
         ]
     }
