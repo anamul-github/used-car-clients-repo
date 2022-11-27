@@ -12,7 +12,32 @@ const AllUsers = () => {
     })
     return (
         <div>
-            <h2>All Users Here</h2>
+            <h2 className='text-3xl m-5 px-5'>All Users</h2>
+            <div className="overflow-x-auto">
+                <table className="table w-full">
+
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Admin</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            users.map((user, i) => <tr key={user._id}>
+                                <th>{i + 1}</th>
+                                <td>{user.name}</td>
+                                <td>{user.email}</td>
+                                <td>Blue</td>
+                                <td>Blue</td>
+                            </tr>)
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
