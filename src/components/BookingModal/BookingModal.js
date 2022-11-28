@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import toast from 'react-hot-toast';
+import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const BookingModal = ({ selectedCar, setSelectedCar }) => {
@@ -41,8 +41,9 @@ const BookingModal = ({ selectedCar, setSelectedCar }) => {
 
                 if (data.acknowledged) {
                     setSelectedCar(null);
-                    toast.success("Booking Confirmed")
+                    toast.success("Congratulations! Your booking is confirmed!");
                 }
+                <ToastContainer></ToastContainer>
             })
     }
 

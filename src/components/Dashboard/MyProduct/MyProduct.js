@@ -3,7 +3,7 @@ import React from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 
 const MyProduct = () => {
-    const { data: products = [], isLoading, refetch } = useQuery({
+    const { data: products = [], refetch } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/products')
