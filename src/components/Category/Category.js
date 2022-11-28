@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import BookingModal from '../BookingModal/BookingModal';
 
+
 const Category = () => {
     const details = useLoaderData();
     const [selectedCar, setSelectedCar] = useState(null);
@@ -20,7 +21,8 @@ const Category = () => {
                             <h2 className='text-primary px-3 py-1'>Price: ${detail.resale_price}</h2>
                             <h2 className='px-3 py-1'>Original Price: ${detail.original_price}</h2>
                             <h2 className='px-3 py-1'>Years of use: {detail.years_of_use} years</h2>
-                            <h2 className='px-3 py-1 pb-5'>Posted on: {detail.posted_time}</h2>
+                            <h2 className='px-3 py-1'>Posted on: {detail.posted_time}</h2>
+                            <h2 className='px-3 py-1 pb-5'>Seller Name: {detail.seller_name}</h2>
                             <div>
                                 <label
                                     onClick={() => setSelectedCar(detail)}
