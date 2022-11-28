@@ -35,8 +35,11 @@ const MyProduct = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
+                            <th>Status</th>
                             <th>location</th>
                             <th>Category</th>
+                            <th>Price</th>
+                            <th>Marketing</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -46,9 +49,12 @@ const MyProduct = () => {
                                 return <tr key={product._id}>
                                     <th>{i + 1}</th>
                                     <td>{product.name}</td>
+                                    <td>Available</td>
                                     <td>{product.location}</td>
                                     <td>{product.category}</td>
-                                    <td><button onClick={() => handleDelete(product)} className='btn btn-xs btn-primary'>Delete</button></td>
+                                    <td>{product.price}</td>
+                                    <td><button className='btn btn-xs btn-success'>Advertise</button></td>
+                                    <td><button onClick={() => handleDelete(product)} className='btn btn-xs btn-warning'>Delete</button></td>
                                     <ToastContainer />
                                 </tr>
                             })

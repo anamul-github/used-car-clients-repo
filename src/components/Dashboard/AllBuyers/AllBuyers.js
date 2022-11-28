@@ -10,9 +10,11 @@ const AllBuyers = () => {
             return data;
         }
     })
+
+
     return (
         <div>
-            <h2 className='text-3xl m-5 px-5'>All Buyers</h2>
+            <h2 className='text-2xl m-5 px-5 text-center'>All Buyers</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
 
@@ -21,7 +23,6 @@ const AllBuyers = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Admin</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -31,8 +32,7 @@ const AllBuyers = () => {
                                 <th>{i + 1}</th>
                                 <td>{buyer.name}</td>
                                 <td>{buyer.email}</td>
-                                <td>Blue</td>
-                                <td>Blue</td>
+                                <td><button className='btn btn-xs btn-warning'>Delete</button></td>
                             </tr>)
                         }
                     </tbody>

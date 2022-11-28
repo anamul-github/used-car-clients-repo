@@ -1,4 +1,3 @@
-// import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import Footer from '../components/Shared/Footer/Footer';
@@ -14,15 +13,6 @@ const DashboardLayout = () => {
     const [isSeller] = useSeller(user?.email);
     const [isBuyer] = useBuyer(user?.email);
 
-    // const { data: users = [] } = useQuery({
-    //     queryKey: ['users'],
-    //     queryFn: async () => {
-    //         const res = await fetch('http://localhost:5000/users');
-    //         const data = await res.json();
-    //         return data;
-    //     }
-    // })
-
     return (
         <div>
             <Header></Header>
@@ -36,44 +26,6 @@ const DashboardLayout = () => {
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 bg-base-100 text-base-content">
-
-                        {/* {
-                            users?.role === "admin" && <>
-                                <li><Link to='/dashboard/allbuyers'>All Buyers</Link></li>
-                                <li><Link to='/dashboard/allsellers'>All Sellers</Link></li>
-                                <li><Link to='/'>Reported Items</Link></li>
-                            </>
-                        }
-                        {
-                            users?.role === "buyer" && <>
-                                <li><Link to='/dashboard/myorders'>My Orders</Link></li>
-                            </>
-                        }
-                        {
-                            users?.role === "seller" && <>
-                                <li><Link to='/dashboard/addproduct'>Add a Product</Link></li>
-                                <li><Link to='/dashboard/myproduct'>My Product</Link></li>
-                            </>
-                        } */}
-
-                        {/* {
-                            isAdmin && <>
-                                <li><Link to='/dashboard/allbuyers'>All Buyers</Link></li>
-                                <li><Link to='/dashboard/allsellers'>All Sellers</Link></li>
-                                <li><Link to='/'>Reported Items</Link></li>
-                            </>
-                                ?
-
-                                isSeller && <>
-                                    <li><Link to='/dashboard/addproduct'>Add a Product</Link></li>
-                                    <li><Link to='/dashboard/myproduct'>My Product</Link></li>
-                                </>
-                                :
-
-                                <li><Link to='/dashboard'>My Orders</Link></li>
-                        } */}
-
-
 
                         {
                             isAdmin && <>
@@ -93,7 +45,6 @@ const DashboardLayout = () => {
                             </>
                         }
                     </ul>
-
                 </div>
             </div>
             <Footer></Footer>
