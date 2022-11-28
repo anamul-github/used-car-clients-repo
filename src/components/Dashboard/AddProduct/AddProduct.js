@@ -6,30 +6,30 @@ const AddProduct = () => {
     const options = [
         {
             id: "1",
-            name: "excellent",
+            name: "Excellent",
         },
         {
             id: "2",
-            name: "old",
+            name: "Old",
         },
         {
             id: "3",
-            name: "fair",
+            name: "Fair",
         },
     ];
 
     const categories = [
         {
             id: "1",
-            name: "yamaha",
+            name: "Regular",
         },
         {
             id: "2",
-            name: "Gixer",
+            name: "Luxury",
         },
         {
             id: "3",
-            name: "Cruiser",
+            name: "Electric",
         },
     ];
 
@@ -69,14 +69,14 @@ const AddProduct = () => {
                 if (data.acknowledged) {
                     console.log(data);
                     form.reset();
-                    toast.success("Your product is added,click to my products and see");
+                    toast.success("Your product is added, click to my product and see");
                 }
             });
     };
 
     return (
         <div>
-            <h1 className="text-5xl font-bold text-amber-900 text-center">
+            <h1 className="text-4xl font-bold text-white-700 mt-5">
                 Add Your Product
             </h1>
             <form onSubmit={handleAddProduct} className="my-6">
@@ -84,7 +84,7 @@ const AddProduct = () => {
                     required
                     type="text"
                     name="name"
-                    placeholder="Product Name"
+                    placeholder="Car Name"
                     className="input input-bordered input-accent w-full max-w-xs mt-4"
                 />
                 <br />
@@ -92,7 +92,7 @@ const AddProduct = () => {
                     required
                     type="text"
                     name="price"
-                    placeholder="Product Price"
+                    placeholder="Car Price"
                     className="input input-bordered input-accent w-full max-w-xs mt-4"
                 />
                 <br />
@@ -101,7 +101,7 @@ const AddProduct = () => {
                     className="select select-bordered w-full max-w-xs mt-4"
                 >
                     <option disabled selected>
-                        Select Condition
+                        Condition
                     </option>
                     {options.map((option) => {
                         return <option key={option.id}>{option.name}</option>;
@@ -112,7 +112,7 @@ const AddProduct = () => {
                     required
                     type="text"
                     name="phone"
-                    placeholder="your number"
+                    placeholder="Your Phone"
                     className="input input-bordered input-accent w-full max-w-xs mt-4"
                 />
                 <br />
@@ -120,7 +120,7 @@ const AddProduct = () => {
                     required
                     type="text"
                     name="location"
-                    placeholder="your location"
+                    placeholder="Your Location"
                     className="input input-bordered input-accent w-full max-w-xs mt-4"
                 />
                 <br />
@@ -129,7 +129,7 @@ const AddProduct = () => {
                     className="select select-bordered w-full max-w-xs mt-4"
                 >
                     <option disabled selected>
-                        Choose category
+                        Choose Category
                     </option>
                     {categories.map((category) => {
                         return <option key={category.id}>{category.name}</option>;
@@ -140,14 +140,14 @@ const AddProduct = () => {
                     required
                     type="text"
                     name="usingTime"
-                    placeholder="years of use"
+                    placeholder="Years of use"
                     className="input input-bordered input-accent w-full max-w-xs mt-4"
                 />
                 <br />
                 <textarea
                     name="description"
-                    className="textarea textarea-bordered mt-4"
-                    placeholder="descriptin"
+                    className="textarea textarea-bordered mt-4 max-w-xs w-full"
+                    placeholder="Description"
                 ></textarea>
                 <br />
                 <input

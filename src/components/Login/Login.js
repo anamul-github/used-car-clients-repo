@@ -88,11 +88,3 @@ const Login = () => {
 };
 
 export default Login;
-
-{/* <Link className="dropdown dropdown-bottom">
-    <Link tabIndex={0} className="btn m-1">Options</Link>
-    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-        <Link>Buyer</Link>
-        <Link>Seller</Link>
-    </ul>
-</Link> */}

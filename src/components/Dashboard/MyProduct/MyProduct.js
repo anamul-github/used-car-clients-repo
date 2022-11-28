@@ -19,7 +19,7 @@ const MyProduct = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.deletedCount > 0) {
-                    toast.success("deleted successfully");
+                    toast.success("Deleted Successfully");
                 }
                 console.log(data);
                 refetch();
@@ -35,8 +35,8 @@ const MyProduct = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>location</th>
+                            <th>Category</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -47,7 +47,7 @@ const MyProduct = () => {
                                     <th>{i + 1}</th>
                                     <td>{product.name}</td>
                                     <td>{product.location}</td>
-                                    <td>Blue</td>
+                                    <td>{product.category}</td>
                                     <td><button onClick={() => handleDelete(product)} className='btn btn-xs btn-primary'>Delete</button></td>
                                     <ToastContainer />
                                 </tr>
