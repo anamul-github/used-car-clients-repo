@@ -5,7 +5,7 @@ const AllBuyers = () => {
     const { data: buyers = [] } = useQuery({
         queryKey: ['buyers'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/allbuyers');
+            const res = await fetch('https://y-iota-three.vercel.app/allbuyers');
             const data = await res.json();
             return data;
         }

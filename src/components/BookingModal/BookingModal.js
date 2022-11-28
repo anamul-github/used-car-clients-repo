@@ -28,7 +28,7 @@ const BookingModal = ({ selectedCar, setSelectedCar }) => {
 
         console.log(booking);
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://y-iota-three.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

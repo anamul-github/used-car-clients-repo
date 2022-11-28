@@ -31,7 +31,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/category/:id',
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/category/${params.id}`)
+                    return fetch(`https://y-iota-three.vercel.app/category/${params.id}`)
                 },
                 element: <PrivateRoute><Category></Category></PrivateRoute>
             },

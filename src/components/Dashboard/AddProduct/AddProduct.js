@@ -57,7 +57,7 @@ const AddProduct = () => {
         };
         console.log(addProduct);
 
-        fetch("http://localhost:5000/products", {
+        fetch("https://y-iota-three.vercel.app/products", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

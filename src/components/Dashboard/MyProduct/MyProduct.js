@@ -6,14 +6,14 @@ const MyProduct = () => {
     const { data: products = [], refetch } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/products')
+            const res = await fetch('https://y-iota-three.vercel.app/products')
             const data = await res.json()
             return data;
         }
     })
 
     const handleDelete = (product) => {
-        fetch(`http://localhost:5000/products/${product._id}`, {
+        fetch(`https://y-iota-three.vercel.app/products/${product._id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
