@@ -7,6 +7,7 @@ import AllBuyers from '../components/Dashboard/AllBuyers/AllBuyers';
 
 import AllSellers from '../components/Dashboard/AllSellers/AllSellers';
 import MyOrders from '../components/Dashboard/MyOrders/MyOrders';
+import MyProduct from '../components/Dashboard/MyProduct/MyProduct';
 import Home from '../components/Home/Home';
 import Login from '../components/Login/Login';
 import SignUp from '../components/SignUp/SignUp';
@@ -73,7 +74,11 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/dashboard/addproduct',
-                element: <SellerRoute><AddProduct></AddProduct></SellerRoute>
+                element: <AddProduct></AddProduct>
+            },
+            {
+                path: '/dashboard/myproduct',
+                element: <MyProduct></MyProduct>
             }
         ]
     }
