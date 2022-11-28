@@ -1,25 +1,27 @@
-import { useQuery } from '@tanstack/react-query';
+// import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import Footer from '../components/Shared/Footer/Footer';
 import Header from '../components/Shared/Header/Header';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 import useAdmin from '../hooks/useAdmin';
+import useBuyer from '../hooks/useBuyer';
 import useSeller from '../hooks/useSeller';
 
 const DashboardLayout = () => {
     const { user } = useContext(AuthContext);
     const [isAdmin] = useAdmin(user?.email);
     const [isSeller] = useSeller(user?.email);
+    const [isBuyer] = useBuyer(user?.email);
 
-    const { data: users = [] } = useQuery({
-        queryKey: ['users'],
-        queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users');
-            const data = await res.json();
-            return data;
-        }
-    })
+    // const { data: users = [] } = useQuery({
+    //     queryKey: ['users'],
+    //     queryFn: async () => {
+    //         const res = await fetch('http://localhost:5000/users');
+    //         const data = await res.json();
+    //         return data;
+    //     }
+    // })
 
     return (
         <div>
@@ -73,32 +75,23 @@ const DashboardLayout = () => {
 
 
 
-                        {/* {
-                            isSeller ? <>
-                                <li><Link to='/dashboard/addproduct'>Add a Product</Link></li>
-                                <li><Link to='/dashboard/myproduct'>My Product</Link></li>
-                            </>
-                                :
-                                <li><Link to='/dashboard'>My Orders</Link></li>
-                        } */}
-
                         {
                             isAdmin && <>
                                 <li><Link to='/dashboard/allbuyers'>All Buyers</Link></li>
                                 <li><Link to='/dashboard/allsellers'>All Sellers</Link></li>
-                                <li><Link to='/dashboard/addproduct'>Add a Product</Link></li>
-                                <li><Link to='/dashboard/myproduct'>My Product</Link></li>
-                                <li><Link to='/dashboard/myorders'>My Orders</Link></li>
                             </>
                         }
-                        {/* {
+                        {
                             isSeller && <>
                                 <li><Link to='/dashboard/addproduct'>Add a Product</Link></li>
                                 <li><Link to='/dashboard/myproduct'>My Product</Link></li>
                             </>
                         }
-
-                        <li><Link to='/dashboard'>My Orders</Link></li> */}
+                        {
+                            isBuyer && <>
+                                <li><Link to='/dashboard/myorders'>My Orders</Link></li>
+                            </>
+                        }
                     </ul>
 
                 </div>

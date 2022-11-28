@@ -4,7 +4,6 @@ import Blog from '../components/Blog/Blog';
 import Category from '../components/Category/Category';
 import AddProduct from '../components/Dashboard/AddProduct/AddProduct';
 import AllBuyers from '../components/Dashboard/AllBuyers/AllBuyers';
-
 import AllSellers from '../components/Dashboard/AllSellers/AllSellers';
 import Dashboard from '../components/Dashboard/Dashboard/Dashboard';
 import MyOrders from '../components/Dashboard/MyOrders/MyOrders';
@@ -15,6 +14,7 @@ import SignUp from '../components/SignUp/SignUp';
 import DashboardLayout from '../layout/DashboardLayout';
 import Main from '../layout/Main';
 import AdminRoute from './AdminRoute';
+import BuyerRoute from './BuyerRoute';
 import PrivateRoute from './PrivateRoute';
 import SellerRoute from './SellerRoute';
 
@@ -67,7 +67,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/dashboard/myorders',
-                element: <MyOrders></MyOrders>
+                element: <BuyerRoute><MyOrders></MyOrders></BuyerRoute>
             },
             {
                 path: '/dashboard/allbuyers',
