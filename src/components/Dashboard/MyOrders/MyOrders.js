@@ -22,12 +22,13 @@ const MyOrders = () => {
 
     return (
         <div>
+            <h2 className='mt-10 px-10 text-white text-2xl mx-5'>Orders</h2>
             {
 
                 bookings?.map(booking =>
                     <div
                         key={booking._id}
-                        className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+                        className="px-10 py-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
                         <div className="rounded overflow-hidden shadow-lg">
                             {/* <img className="w-full" src={detail.picture} alt="Mountain" /> */}
                             <h2 className='text-2xl px-3 py-2'> {booking.carName}</h2>
